@@ -23,9 +23,9 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>email</th>
-            <th>logo</th>
-            <th>website</th>
+            <th>E-Mail</th>
+            <th>Logo</th>
+            <th>Website</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($company as $companies )

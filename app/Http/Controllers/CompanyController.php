@@ -61,7 +61,7 @@ class CompanyController extends Controller
         
             $company->save();
             return redirect()->route('company.index')
-                            ->with('success','Product created successfully.');
+                            ->with('success','Company created successfully.');
         }
     }
 
@@ -102,6 +102,10 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => 'required',
+            
+        ]);
         $company =Company::find($id);
         $company->name = $request->input('name');
         $company->email = $request->input('email');
@@ -123,7 +127,7 @@ class CompanyController extends Controller
           }
           $company->update();
           return redirect()->route('company.index')
-                          ->with('success','Product created successfully.');
+                          ->with('success','Company updated successfully.');
     }
 
     /**
@@ -138,7 +142,7 @@ class CompanyController extends Controller
             $company->delete();
     
             return redirect()->route('company.index')
-                            ->with('success','company deleted successfully');
+                            ->with('success','Company deleted successfully');
         }
     }
 }

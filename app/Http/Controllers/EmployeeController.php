@@ -93,7 +93,7 @@ class EmployeeController extends Controller
             $employee->update($request->all());
     
             return redirect()->route('employees.index')
-                            ->with('success','Product updated successfully');
+                            ->with('success','Employee updated successfully');
         }
     }
 
@@ -109,7 +109,7 @@ class EmployeeController extends Controller
             $employee->delete();
     
             return redirect()->route('employees.index')
-                            ->with('success','employee deleted successfully');
+                            ->with('success','Employee deleted successfully');
         }
     }
 }
